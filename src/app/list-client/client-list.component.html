@@ -1,0 +1,54 @@
+<div class = "row">
+
+    <h2>Liste clients</h2>
+ 
+ </div>
+ 
+ <table class="table table-striped table-bordered">
+ 
+    <thead>
+ 
+        <th>Nom</th>
+ 
+        <th>Prenom</th>
+ 
+        <th>Adresse</th>
+ 
+        <th>Date de naissance</th>
+ 
+        <th>Téléphone</th>
+        <th>Actions</th>
+  
+    </thead>
+ 
+    <tbody>
+ 
+      <tr *ngFor="let client of clients">
+ 
+        <td>{{client.lastName}}</td>
+ 
+        <td>{{client.firstName}}</td>
+ 
+        <td>{{client.address}}</td>
+ 
+        <td>{{client.birthday}}</td>
+ 
+        <td>{{client.phone}}</td>
+ 
+        <td>
+ 
+          <button class="btn btn-warning" (click)="navigateToEditUser(client.id)">Modifier</button>
+ 
+          <!-- <button (click)="deleteClient(client.id)"></button> -->
+ 
+          <button class="btn btn-danger" (click)="deleteUser(client.id)">Supprimer</button>
+ 
+        </td>
+ 
+      </tr>
+ 
+       
+ 
+    </tbody>
+ 
+ </table>
