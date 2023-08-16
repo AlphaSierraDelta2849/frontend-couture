@@ -33,6 +33,7 @@ export class AuthService {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
      return this.http.post<any>(`${this.apiUrl}/signout`, {},{headers})    
   }
 

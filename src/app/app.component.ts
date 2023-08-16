@@ -11,12 +11,15 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'frontend';
   user:string | null='non Connecté';
-  
+  isLoggedIn:boolean;
   constructor(private authService: AuthService,private router: Router){
+    this.isLoggedIn=authService.isLoggedIn()
   }
   ngOnInit(){
     if(localStorage.getItem('user'))
     this.user=localStorage.getItem('user');
+
+    console.log(this.user)
   }
   login(){
     this.router.navigate(['/auth']);
