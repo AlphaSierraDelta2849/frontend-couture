@@ -29,12 +29,13 @@ export class AuthComponent {
     var signed:boolean;
     this.auhtService.signup(this.user.username,this.user.email,this.user.password,this.roles).subscribe((res)=>{
       if(res.status=200){
+        console.log(res)
         alert('Enrégistré avec succès')
         this.goToLogin();
       }
       else {
         console.log(res);
-        alert(res.body.message);
+        alert(res.message);
       }
     })
   }
@@ -42,7 +43,7 @@ export class AuthComponent {
     console.log(this.user)
     this.auhtService.login(this.user.username,this.user.password).subscribe((res) => {
       console.log(res)
-      alert('Enrégistré avec succès!')
+      alert('Connecté avec succès!')
       this.router.navigate(['/']);
     }
     )
