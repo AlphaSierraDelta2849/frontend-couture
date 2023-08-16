@@ -1,57 +1,69 @@
-<div class="row mb-10">
+<div class="row mb-5">
   <!-- user-form.component.html -->
   <div class="col-6">
+    <h2>Identité client</h2>
   <form (submit)="saveUser()">
-    <div class="form-group">
-      <label>Nom:</label>
-      <input
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Nom:</label>
+      <div class="col-sm-10">
+      <input class="form-control"
         type="text"
         [(ngModel)]="client!.firstName"
         name="firstName"
         required
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label>Prénom:</label>
-      <input
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Prénom:</label>
+      <div class="col-sm-10">
+      <input class="form-control"
         type="text"
         [(ngModel)]="client!.lastName"
         name="lastName"
         required
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label>Adresse:</label>
-      <input
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Adresse:</label>
+      <div class="col-sm-10">
+      <input class="form-control"
         type="text"
         [(ngModel)]="client!.address"
         name="address"
         required
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label>Téléphone:</label>
-      <input type="tel" [(ngModel)]="client!.phone" name="phone" required />
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Téléphone:</label>
+      <div class="col-sm-10">
+      <input class="form-control" type="tel" [(ngModel)]="client!.phone" name="phone" required />
+      </div>
     </div>
-    <div class="form-group">
-      <label>Naissance:</label>
-      <input
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Naissance:</label>
+      <div class="col-sm-10">
+      <input class="form-control"
         type="date"
         [(ngModel)]="client!.birthday"
         name="birthday"
         required
       />
+      </div>
     </div>
-    <div class="form-group">
-      <label>Piece(cni ou passeport):</label>
-      <input type="text" [(ngModel)]="client!.cni" name="cni" required />
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Piece(cni ou passeport):</label>
+      <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="client!.cni" name="cni" required />
+      </div>
     </div>
-    <div class="form-group">
-      <label>Sexe:</label>
-      <select [(ngModel)]="client!.sexe" name="sexe">
+    <div class="form-group row mb-1">
+      <label class="col-sm-2 col-form-label">Sexe:</label>
+      <div class="col-sm-10">
+      <select class="custom-select my-1 mr-sm-2 form-control" [(ngModel)]="client!.sexe" name="sexe">
         <option value="homme">homme</option>
         <option value="femme">femme</option>
       </select>
+      </div>
     </div>
     <button class="btn btn-success" type="submit">Enrégisrer</button>
   </form>
@@ -59,192 +71,225 @@
   <div class="col-6" *ngIf="client!.id">
     <h2>Mesures</h2>
     <form (submit)="saveMesure()">
-      <div class="form-group">
-        <label>Tete:</label>
-        <input type="number" [(ngModel)]="mesure!.tete" name="tete" required />
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">Tete:</label>
+        <div class="col-sm-5">
+        <input class="form-control" type="number" [(ngModel)]="mesure!.tete" name="tete" required />
+        </div>
       </div>
-      <div class="form-group">
-        <label>coup:</label>
-        <input type="number" [(ngModel)]="mesure!.coup" name="coup" required />
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">coup:</label>
+        <div class="col-sm-5">
+        <input class="form-control" type="number" [(ngModel)]="mesure!.coup" name="coup" required />
+        </div>
       </div>
-      <div class="form-group">
-        <label>epaule:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">epaule:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.epaule"
           name="epaule"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>LBras:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">LBras:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.lbras"
           name="lBras"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>poitrine:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">poitrine:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.poitrine"
           name="poitrine"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>hanches:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">hanches:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.hanches"
           name="hanches"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>LCorps:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">LCorps:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.lcorps"
           name="lCorps"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>cuisse:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">cuisse:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.cuisse"
           name="cuisse"
           required
-        />
+        /></div>
       </div>
-      <div class="form-group">
-        <label>genou:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">genou:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.genou"
           name="genou"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>mollet:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">mollet:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.mollet"
           name="mollet"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>cheville:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">cheville:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.cheville"
           name="cheville"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>biceps:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">biceps:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.biceps"
           name="biceps"
           required
-        />
+        /></div>
       </div>
-      <div class="form-group">
-        <label>coude:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">coude:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.coude"
           name="coude"
           required
         />
+        </div>
       </div>
-      <div class="form-group">
-        <label>avantBras:</label>
-        <input
-          type="number"
-          [(ngModel)]="mesure!.avantBras"
-          name="avantBras"
-          required
-        />
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">avantBras:</label>
+          <div class="col-sm-5">
+            <input class="form-control"
+              type="number"
+              [(ngModel)]="mesure!.avantBras"
+              name="avantBras"
+              required
+            />
+          </div>
       </div>
-      <div class="form-group">
-        <label>poignetCoude:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">poignetCoude:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.poignetCoude"
           name="poignetCoude"
           required
-        />
+        /></div>
       </div>
-      <div class="form-group">
-        <label>entreJambe:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">entreJambe:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.entreJambe"
           name="entreJambe"
           required
-        />
+        /></div>
       </div>
-      <div class="form-group">
-        <label>coutureExt:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">coutureExt:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.coutureExt"
           name="coutureExt"
           required
-        />
+        /></div>
       </div>
-      <div class="form-group">
-        <label>hToal:</label>
-        <input
+      <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">hToal:</label>
+        <div class="col-sm-5">
+        <input class="form-control"
           type="number"
           [(ngModel)]="mesure!.htoal"
           name="hToal"
           required
-        />
+        /></div>
       </div>
-      <!-- <div class="form-group">
-      <label>avantBras:</label>
-      <input type="number" [(ngModel)]="mesure!.avantBras" name="avantBras" required>
+      <!-- <div class="form-group row mb-3">
+      <label class="col-sm-2 col-form-label">avantBras:</label>
+      <input class="form-control" type="number" [(ngModel)]="mesure!.avantBras" name="avantBras" required>
     </div> -->
       <div *ngIf="client!.sexe === 'femme'">
-        <div class="form-group">
-          <label>dessous Poitrine:</label>
-          <input
+        <div class="form-group row mb-1">
+          <label class="col-sm-2 col-form-label">dessous Poitrine:</label>
+          <div class="col-sm-5">
+          <input class="form-control"
             type="number"
             [(ngModel)]="mesure!.dessousPoit"
             name="dessousPoit"
             required
-          />
+          /></div>
         </div>
-        <div class="form-group">
-          <label>Longueur Dos:</label>
-          <input
+        <div class="form-group row mb-1">
+          <label class="col-sm-2 col-form-label">Longueur Dos:</label>
+          <div class="col-sm-5">
+          <input class="form-control"
             type="number"
             [(ngModel)]="mesure!.lDos"
             name="lDos"
             required
-          />
+          /></div>
         </div>
-        <div class="form-group">
-          <label>Cretes Iliaque:</label>
-          <input
+        <div class="form-group row mb-1">
+          <label class="col-sm-2 col-form-label">Cretes Iliaque:</label>
+          <div class="col-sm-5">
+          <input class="form-control"
             type="number"
             [(ngModel)]="mesure!.cretesIliaque"
             name="cretesIliaque"
             required
-          />
+          /></div>
         </div>
       </div>
-      <button class="bn btn-success" type="submit">Enrégisrer</button>
+      <button class="btn btn-success" type="submit">Modifier mesure</button>
     </form>
   </div>
 </div>

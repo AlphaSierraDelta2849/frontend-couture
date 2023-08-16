@@ -1,0 +1,76 @@
+<div>
+    <div *ngIf="forLogin" >
+    <form (submit)="login()" >
+    <fieldset>
+        <legend>Login</legend>
+        <div class="form-group row mb-3">
+            <label class="col-sm-2 col-form-label">Nom d'utilisateur</label>
+            <div class="col-sm-10">
+                <input type="text" name="username" [(ngModel)]="user.username" class="form-control" placeholder="xyz">
+              </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label class="col-sm-2 col-form-label" >Password:</label>
+            <div class="col-sm-10">
+            <input name="password" class="form-control" type="password" [(ngModel)]="user.password">
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-inline">
+    <div class="form-group">
+        <div class="col-sm-10"><button class="btn btn-primary mb-10" 
+            >Se connecter</button></div>
+            <div class="col-sm-10"><span class="badge text-bg-info"(click)="goToSignup()" >pas encore de compte? S'inscrire</span></div>
+    
+    </div>
+</div>
+</form>
+</div>
+<div>
+<form (submit)="signup()" *ngIf="!forLogin">
+    <fieldset>
+        <legend>Inscription</legend>
+            <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label">Nom d'utilisateur:</label>
+            <div class="col-sm-7">
+            <input name="username" class="form-control" type="text" [(ngModel)]="user.username">
+        </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-7">
+            <input name="email"class="form-control"  type="email" [(ngModel)]="user.email">
+        </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label">Mot de passe:</label>
+            <div class="col-sm-7">
+            <input name="password" class="form-control"
+                   type="password"[(ngModel)]="user.password" >
+                </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label>Roles:</label>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-outline-danger" 
+                        (click)="addRole(2)">Utilisateur</button>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-outline-warning" 
+                        (click)="addRole(1)">Modérateur</button>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-outline-success" 
+                        (click)="addRole(0)">Admin</button>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group row mb-3">
+        <div class="col-sm-10">
+        <button class="btn btn-primary" 
+                >S'inscrire</button></div><div class="col-sm-10">
+                <span class="badge text-bg-info"(click)="goToLogin()" >Deja inscrit? se connecter</span></div>
+    </div>
+</form>
+</div>
+</div>
